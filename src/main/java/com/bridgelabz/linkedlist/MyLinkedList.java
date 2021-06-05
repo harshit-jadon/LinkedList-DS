@@ -25,10 +25,10 @@ public class MyLinkedList <K> {
         }
         this.tail = myNode;
     }
-    public void insert(K data, K newData) {
-        MyNode<K> myNode = new MyNode<>(newData);
+    public void insert(K newdata, K data) {
+        MyNode<K> myNode = new MyNode<>(data);
         MyNode<K> temp = head;
-        while (temp.data != data && temp.next != null) {
+        while (temp.data != newdata && temp.next != null) {
             temp = temp.next;
         }
         if(temp.next != null)
@@ -56,7 +56,18 @@ public class MyLinkedList <K> {
             temp.next = null;
         }
     }
-
+    public boolean searchNode(K data) {
+        MyNode<K> temp = head;
+        while(temp != null)
+        {
+            if(temp.data == data)
+            {
+                return true;
+            }
+            temp = temp.next;
+        }
+        return false;
+    }
 
         public void printList()  {
             MyNode<K> tempNode = head;
