@@ -11,7 +11,7 @@ public class MyLinkedList <K> {
             this.tail = myNode;
         }
         if (head != null) {
-            myNode.next = this.head;
+             this.head = myNode.next ;
         }
         this.head = myNode;
     }
@@ -24,9 +24,19 @@ public class MyLinkedList <K> {
             tail.next = myNode;
         }
         this.tail = myNode;
-
     }
-
+    public void insert(K data, K newData) {
+        MyNode<K> myNode = new MyNode<>(newData);
+        MyNode<K> temp = head;
+        while (temp.data != data && temp.next != null) {
+            temp = temp.next;
+        }
+        if(temp.next != null)
+        {
+            myNode.next = temp.next;
+            temp.next = myNode;
+        }
+    }
         public void printList()  {
             MyNode<K> tempNode = head;
             while(tempNode!= null){

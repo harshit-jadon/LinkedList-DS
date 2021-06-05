@@ -19,9 +19,9 @@ public class MyNodeTest {
     @Test
     public void given3Numbers_whenAddedToLinkedList_ShouldPassTest() {
         MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
-        myLinkedList.push(70);
         myLinkedList.push(30);
         myLinkedList.push(56);
+        myLinkedList.push(70);
         myLinkedList.printList();
         boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(30) && myLinkedList.tail.data.equals(70);
         Assert.assertTrue(result);
@@ -29,11 +29,24 @@ public class MyNodeTest {
     @Test
     public void given3Numbers_whenAppendToLinkedList_ShouldPassTest() {
         MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
-        myLinkedList.push(70);
         myLinkedList.push(30);
         myLinkedList.push(56);
+        myLinkedList.push(70);
         myLinkedList.printList();
         boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(30) && myLinkedList.tail.data.equals(70);
         Assert.assertTrue(result);
     }
+    @Test
+    public void given2NumberS_WhenInsertAfterFirstNumber_ShouldPassTest()
+    {
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(56);
+        myLinkedList.append(70);
+        myLinkedList.printList();
+        myLinkedList.insert(56,30);
+        boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(30) && myLinkedList.head.next.data.equals(40) && myLinkedList.tail.data.equals(76);
+        Assert.assertTrue(result);
+    }
+    
+
 }
