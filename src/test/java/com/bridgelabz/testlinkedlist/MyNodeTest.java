@@ -1,8 +1,6 @@
 package com.bridgelabz.testlinkedlist;
 
-import com.bridgelabz.linkedlist.MyLinkedList;
-import com.bridgelabz.linkedlist.MyNode;
-import com.bridgelabz.linkedlist.MySortedLinkedList;
+import com.bridgelabz.linkedlist.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -108,4 +106,48 @@ public class MyNodeTest {
         boolean result = mySortedLinkedList.head.data.equals(30) && mySortedLinkedList.head.next.data.equals(40) && mySortedLinkedList.head.next.next.data.equals(56) && mySortedLinkedList.head.next.next.next.data.equals(70);
         Assert.assertTrue(result);
     }
+    @Test
+    public void given3Integers_WhenAddedToStack_ShouldReturnTrue()
+    {
+        StackDS<Integer> stack = new StackDS<>();
+        stack.push(56);
+        stack.push(30);
+        stack.push(70);
+        MyNode result = stack.peak();
+        Assert.assertEquals(result.data,70 );
+    }
+    @Test
+    public void given3IntegersInStack_WhenPop_ShouldMatchWithSecondLastAddedNode() {
+        StackDS<Integer> stack = new StackDS<>();
+        stack.push(56);
+        stack.push(30);
+        stack.push(70);
+        stack.printStack();
+        stack.pop();
+        stack.printStack();
+        MyNode result = stack.peak();
+        Assert.assertEquals(result.data ,70);
+    }
+    @Test
+    public void given3Integers_WhenAddedToQueue_ShouldHaveReturnTrue() {
+        QueueDS<Integer> queue = new QueueDS<>();
+        queue.enqueue(56);
+        queue.enqueue(30);
+        queue.enqueue(70);
+        MyNode result = queue.front();
+        Assert.assertEquals(result.data, 56);
+    }
+    @Test
+    public void given3IntegersInQueue_WhenDequeue_ShouldMatchWithSecondAddedNode() {
+        QueueDS<Integer> queue = new QueueDS<>();
+        queue.enqueue(56);
+        queue.enqueue(30);
+        queue.enqueue(70);
+        queue.printQueue();
+        queue.dequeue();
+        queue.printQueue();
+        MyNode result = queue.front();
+        Assert.assertEquals(result.data, 30);
+    }
+
 }
