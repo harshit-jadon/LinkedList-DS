@@ -2,6 +2,7 @@ package com.bridgelabz.testlinkedlist;
 
 import com.bridgelabz.linkedlist.MyLinkedList;
 import com.bridgelabz.linkedlist.MyNode;
+import com.bridgelabz.linkedlist.MySortedLinkedList;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -45,7 +46,7 @@ public class MyNodeTest {
         myLinkedList.append(70);
         myLinkedList.printList();
         myLinkedList.insert(30,40);
-        boolean result = myLinkedList.head.data.equals(30) && myLinkedList.head.next.data.equals(40) && myLinkedList.head.next.data.equals(56) && myLinkedList.head.next.data.equals(70);
+        boolean result = myLinkedList.head.data.equals(30) && myLinkedList.head.next.data.equals(40) && myLinkedList.head.next.next.data.equals(56) && myLinkedList.head.next.next.next.data.equals(70);
         Assert.assertTrue(result);
     }
 
@@ -94,5 +95,17 @@ public class MyNodeTest {
     myLinkedList.deleteFromLinkedList(56);
     boolean result = myLinkedList.head.data.equals(30) && myLinkedList.head.next.data.equals(70);
     Assert.assertTrue(result);
+    }
+
+    @Test
+    public void givenNumbers_whenCreateSortedList_ShouldReturnTrue(){
+        MySortedLinkedList<Integer> mySortedLinkedList = new MySortedLinkedList<>();
+        mySortedLinkedList.add(40);
+        mySortedLinkedList.add(30);
+        mySortedLinkedList.add(70);
+        mySortedLinkedList.add(56);
+
+        boolean result = mySortedLinkedList.head.data.equals(30) && mySortedLinkedList.head.next.data.equals(40) && mySortedLinkedList.head.next.next.data.equals(56) && mySortedLinkedList.head.next.next.next.data.equals(70);
+        Assert.assertTrue(result);
     }
 }
