@@ -23,6 +23,17 @@ public class MyNodeTest {
         myLinkedList.push(30);
         myLinkedList.push(56);
         myLinkedList.printList();
-        boolean result = myLinkedList.head.equals(70) && myLinkedList.head.next.equals(30) && myLinkedList.head.next.equals(56);
+        boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(30) && myLinkedList.tail.data.equals(70);
+        Assert.assertTrue(result);
+    }
+    @Test
+    public void given3Numbers_whenAppendToLinkedList_ShouldPassTest() {
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.push(70);
+        myLinkedList.push(30);
+        myLinkedList.push(56);
+        myLinkedList.printList();
+        boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(30) && myLinkedList.tail.data.equals(70);
+        Assert.assertTrue(result);
     }
 }
