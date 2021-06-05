@@ -1,9 +1,6 @@
 package com.bridgelabz.testlinkedlist;
 
-import com.bridgelabz.linkedlist.MyLinkedList;
-import com.bridgelabz.linkedlist.MyNode;
-import com.bridgelabz.linkedlist.MySortedLinkedList;
-import com.bridgelabz.linkedlist.StackDS;
+import com.bridgelabz.linkedlist.*;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -130,6 +127,27 @@ public class MyNodeTest {
         stack.printStack();
         MyNode result = stack.peak();
         Assert.assertEquals(result.data ,70);
+    }
+    @Test
+    public void given3Integers_WhenAddedToQueue_ShouldHaveReturnTrue() {
+        QueueDS<Integer> queue = new QueueDS<>();
+        queue.enqueue(56);
+        queue.enqueue(30);
+        queue.enqueue(70);
+        MyNode result = queue.front();
+        Assert.assertEquals(result.data, 56);
+    }
+    @Test
+    public void given3IntegersInQueue_WhenDequeue_ShouldMatchWithSecondAddedNode() {
+        QueueDS<Integer> queue = new QueueDS<>();
+        queue.enqueue(56);
+        queue.enqueue(30);
+        queue.enqueue(70);
+        queue.printQueue();
+        queue.dequeue();
+        queue.printQueue();
+        MyNode result = queue.front();
+        Assert.assertEquals(result.data, 30);
     }
 
 }
