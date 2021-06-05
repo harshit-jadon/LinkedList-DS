@@ -59,6 +59,27 @@ public class MyNodeTest {
         myLinkedList.printList();
         boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(70);
         Assert.assertTrue(result);
+    }
 
+    @Test
+    public void WhenDeleteLastNode_FromLinkedList_ShouldReturnTrue() {
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(30);
+        myLinkedList.append(56);
+        myLinkedList.append(70);
+        myLinkedList.printList();
+        myLinkedList.deleteLastNode();
+        myLinkedList.printList();
+        boolean result = myLinkedList.head.data.equals(30) && myLinkedList.head.next.data.equals(56);
+    }
+    @Test
+    public void WhenSearchNode_FromLinkedList_ShouldReturnTrue() {
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(30);
+        myLinkedList.append(56);
+        myLinkedList.append(70);
+        myLinkedList.printList();
+        boolean result = myLinkedList.searchNode(30);
+        Assert.assertTrue(result);
     }
 }
