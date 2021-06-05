@@ -47,6 +47,18 @@ public class MyNodeTest {
         boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(30) && myLinkedList.head.next.data.equals(40) && myLinkedList.tail.data.equals(76);
         Assert.assertTrue(result);
     }
-    
 
+    @Test
+    public void WhenDeleteFirstNode_FromLinkedList_ShouldReturnTrue() {
+        MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
+        myLinkedList.append(30);
+        myLinkedList.append(56);
+        myLinkedList.append(70);
+        myLinkedList.printList();
+        myLinkedList.deleteFirstNode();
+        myLinkedList.printList();
+        boolean result = myLinkedList.head.data.equals(56) && myLinkedList.head.next.data.equals(70);
+        Assert.assertTrue(result);
+
+    }
 }

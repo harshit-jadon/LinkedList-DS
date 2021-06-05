@@ -37,6 +37,14 @@ public class MyLinkedList <K> {
             temp.next = myNode;
         }
     }
+    public void deleteFirstNode(){
+        if(head ==null){
+            System.out.println("linkedList is already empty");}
+        else{
+            head = head.next;
+        }
+    }
+
         public void printList()  {
             MyNode<K> tempNode = head;
             while(tempNode!= null){
