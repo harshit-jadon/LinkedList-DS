@@ -56,18 +56,7 @@ public class MyLinkedList <K> {
             temp.next = null;
         }
     }
-    public boolean searchNode(K data) {
-        MyNode<K> temp = head;
-        while(temp != null)
-        {
-            if(temp.data == data)
-            {
-                return true;
-            }
-            temp = temp.next;
-        }
-        return false;
-    }
+
 
         public void printList()  {
             MyNode<K> tempNode = head;
