@@ -68,6 +68,27 @@ public class MyLinkedList <K> {
         }
         return false;
     }
+    public void deleteFromLinkedList(K data) {
+        if (head.data == data) {
+            head = head.next;
+        }
+        MyNode<K> temp = head;
+        if (tail.data == data) {
+            while (temp.next != tail) {
+                temp = temp.next;
+            }
+            tail = temp;
+            temp.next = null;
+        } else {
+            while (temp.next != null) {
+                if (temp.next.data == data) {
+                    MyNode<K> xyz = temp.next;
+                    temp.next = xyz.next;
+                }
+                temp = temp.next;
+            }
+        }
+    }
 
         public void printList()  {
             MyNode<K> tempNode = head;
